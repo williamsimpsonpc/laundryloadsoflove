@@ -44,8 +44,8 @@ body {
 /*header section*/
 .hero_area {
   height: calc(100vh - 30px);
-  background: -webkit-gradient(linear, left top, right top, color-stop(55%, #1a2e35), color-stop(55%, #1cbbb4));
-  background: linear-gradient(to right, #1a2e35 55%, #1cbbb4 55%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(55%, #c0d1fa), color-stop(55%, #ffbffe));
+  background: linear-gradient(to right, #c0d1fa 55%, #ffbffe 55%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,7 +59,7 @@ body {
 .sub_page .hero_area {
   height: auto;
   background: none;
-  background-color: #1a2e35;
+  background-color: #fc9aea;
 }
 
 .hero_area.sub_pages {
@@ -325,7 +325,7 @@ a:focus {
   background-repeat: no-repeat;
   background-size: 14px;
   background-position: center;
-  background-color: #1cbbb4;
+  background-color: #fca9ed;
   margin: 2px;
 }
 
@@ -430,7 +430,7 @@ a:focus {
 }
 
 .category_section {
-  background-color: #1cbbb4;
+  background-color: #fca9ed;
   color: #ffffff;
   text-align: center;
 }
@@ -576,9 +576,10 @@ a:focus {
   color: #252525;
 }
 
+
 .freelance_section .tab_container .t-link-box[aria-expanded="true"] .img-box, .freelance_section .tab_container .t-link-box:hover .img-box {
   background-color: #1cbbb4;
-}
+}                     #ff63e2
 
 .freelance_section .img-box img {
   width: 100%;
@@ -636,7 +637,7 @@ a:focus {
 /* info section */
 .info_section {
   position: relative;
-  background-color: #1a2e35;
+  background-color: #ffbffe;
   color: #ffffff;
 }
 
@@ -800,7 +801,7 @@ a:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #fdfeff;
+  background-color: #c0d1fa;
 }
 
 .footer_section p {
