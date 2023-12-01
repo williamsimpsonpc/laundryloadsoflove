@@ -4,6 +4,8 @@ body {
   background-color: #ffffff;
 }
 
+
+
 .layout_padding {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -59,7 +61,7 @@ body {
 .sub_page .hero_area {
   height: auto;
   background: none;
-  background-color: #fc9aea;
+  background-color: #ffbffe;
 }
 
 .hero_area.sub_pages {
@@ -153,21 +155,11 @@ a:focus {
           align-items: center;
 }
 
-.navbar-brand img {
-  width: 35px;
-  margin-right: 5px;
-}
-
-.navbar-brand span {
-  font-weight: bold;
-  color: #ffffff;
-  font-size: 24px;
-}
 
 .custom_nav-container {
   z-index: 99999;
   padding: 0;
-  height: 70px;
+  height: 200px;
 }
 
 .custom_nav-container .navbar-toggler {
@@ -199,7 +191,7 @@ a:focus {
 }
 
 .login_btn-container a {
-  color: #1cbbb4;
+  color: #ffbffe;
   text-transform: uppercase;
 }
 
@@ -331,7 +323,7 @@ a:focus {
 
 .slider_section .carousel_btn-container .carousel-control-prev:hover,
 .slider_section .carousel_btn-container .carousel-control-next:hover {
-  background-color: #ff4f5a;
+  background-color: #ffbffe;
 }
 
 .slider_section .carousel_btn-container .carousel-control-prev {
@@ -411,7 +403,7 @@ a:focus {
 .experience_section .detail-box .btn-box .btn-2 {
   display: inline-block;
   padding: 10px 0;
-  background-color: #1a2e35;
+  background-color: #ffbffe;
   color: #ffffff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -421,8 +413,8 @@ a:focus {
 
 .experience_section .detail-box .btn-box .btn-2:hover {
   background-color: transparent;
-  border-color: #1a2e35;
-  color: #1a2e35;
+  border-color: #ffbffe;
+  color: #ffbffe;
 }
 
 .experience_section .img-box img {
@@ -554,7 +546,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #1a2e35;
+  background-color: #ffbffe;
   border-radius: 100%;
   margin-right: 35px;
 }
@@ -578,8 +570,8 @@ a:focus {
 
 
 .freelance_section .tab_container .t-link-box[aria-expanded="true"] .img-box, .freelance_section .tab_container .t-link-box:hover .img-box {
-  background-color: #1cbbb4;
-}                     #ff63e2
+  background-color: #ffbffe;
+}                     
 
 .freelance_section .img-box img {
   width: 100%;
@@ -620,7 +612,7 @@ a:focus {
   background-repeat: no-repeat;
   background-size: 10px;
   background-position: center;
-  background-color: #1a2e35;
+  background-color: #c0d1fa;
   margin: 2px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -672,7 +664,8 @@ a:focus {
 }
 
 .info_section .info_top .info_logo img {
-  width: 65px;
+  width: 75px;
+  Height: 75px;
 }
 
 .info_section .info_top .info_logo span {
