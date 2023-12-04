@@ -27,7 +27,10 @@
   font-size: 35px;
 }
 
-
+.googleform {
+    width: 700px;
+    height: 600px;
+  }
 
 
 
@@ -109,6 +112,11 @@
 
   .info_section .info_contact .link-box .img-box {
     margin-right: 8px;
+  }
+
+  .googleform {
+    width: 375px;
+    height: 382px;
   }
 
 }
@@ -223,7 +231,7 @@
   }
 
   .slider_section ol.carousel-indicators {
-    right: 0;
+    right: 0; 
   }
 
   .client_section .carousel-control-prev,

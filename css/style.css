@@ -358,9 +358,7 @@ a:focus {
 }
 
 .experience_section .row {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+
 }
 
 .experience_section .detail-box p {
@@ -417,8 +415,9 @@ a:focus {
   color: #ffbffe;
 }
 
+/*STARS SIZE*/
 .experience_section .img-box img {
-  width: 100%;
+  width: 75%;
 }
 
 .category_section {
@@ -665,7 +664,7 @@ a:focus {
 
 .info_section .info_top .info_logo img {
   width: 75px;
-  Height: 75px;
+  Height: 57px;
 }
 
 .info_section .info_top .info_logo span {
