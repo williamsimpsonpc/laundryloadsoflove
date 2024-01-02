@@ -3,6 +3,15 @@
 
 @media (max-width: 1120px) {}
 
+#col-1 {
+  background-color: yellow;
+  flex: 1;
+}
+
+#col-2 {
+  background-color: orange;
+  flex: 3.5;
+}
 
 /*LOGO SIZE*/
 .navbar-brand img {
@@ -34,9 +43,17 @@
 
 
 
-
-
 @media (max-width: 992px) {
+	
+#col-1 {
+  background-color: yellow;
+  flex: 1;
+}
+
+#col-2 {
+  background-color: orange;
+  flex: 2;
+}
 
 /*LOGO SIZE*/
 .navbar-brand img {
@@ -122,6 +139,18 @@
 }
 
 @media (max-width: 767px) {
+	
+#col-1 {
+  background-color: yellow;
+  flex: 1;
+}
+
+#col-2 {
+  background-color: orange;
+  flex: 2;
+}
+
+
   .hero_area {
     background: none;
     background-color: #c0d1fa;
@@ -201,6 +230,17 @@
 }
 
 @media (max-width: 576px) {
+
+	#col-1 {
+  background-color: yellow;
+  flex: 1;
+}
+
+#col-2 {
+  background-color: orange;
+  flex: 1.75;
+}
+
   .category_section .category_container {
     justify-content: center;
   }
@@ -257,6 +297,18 @@
 @media (max-width: 360px) {}
 
 @media (min-width: 1200px) {
+	
+	#col-1 {
+  background-color: yellow;
+  flex: 1;
+}
+
+#col-2 {
+  background-color: orange;
+  flex: 4;
+}
+
+	
   .container {
     max-width: 1170px;
   }

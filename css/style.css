@@ -5,6 +5,14 @@ body {
 }
 
 
+.splitscreen {
+  display: flex;
+}
+
+.stars {
+	width: 100%;
+}
+
 
 .layout_padding {
   padding-top: 90px;
