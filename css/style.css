@@ -4,6 +4,9 @@ body {
   background-color: #ffffff;
 }
 
+.font{
+  font-family: 'Katibeh', serif;
+}
 
 .splitscreen {
   display: flex;
@@ -102,7 +105,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: #ffffff;
+  color: black;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -116,7 +119,7 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
   padding: 10px 15px;
-  color: #ffffff;
+  color: black;
   text-align: center;
 }
 
@@ -229,13 +232,13 @@ a:focus {
 }
 
 .slider_section .detail-box h1 {
-  color: #ffffff;
+  color: black;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .slider_section .detail-box p {
-  color: #ffffff;
+  color: black;
   margin-top: 15px;
 }
 
@@ -259,7 +262,7 @@ a:focus {
   display: inline-block;
   padding: 10px 0;
   background-color: #ff4f5a;
-  color: #ffffff;
+  color: black;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -275,7 +278,7 @@ a:focus {
 .slider_section .detail-box .btn-box .btn-2 {
   display: inline-block;
   padding: 10px 0;
-  background-color: #ffffff;
+  background-color: black;
   color: #252525;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -285,8 +288,8 @@ a:focus {
 
 .slider_section .detail-box .btn-box .btn-2:hover {
   background-color: transparent;
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: black;
+  color: black;
 }
 
 .slider_section .img-container .img-box img {
@@ -355,7 +358,7 @@ a:focus {
   text-indent: 0px;
   text-align: center;
   line-height: 55px;
-  color: #ffffff;
+  color: black;
   background-color: transparent;
   opacity: 1;
   display: none;
@@ -393,7 +396,7 @@ a:focus {
   display: inline-block;
   padding: 10px 0;
   background-color: #ff4f5a;
-  color: #ffffff;
+  color: black;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -410,7 +413,7 @@ a:focus {
   display: inline-block;
   padding: 10px 0;
   background-color: #ffbffe;
-  color: #ffffff;
+  color: black;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -430,7 +433,7 @@ a:focus {
 
 .category_section {
   background-color: #fca9ed;
-  color: #ffffff;
+  color: black;
   text-align: center;
 }
 
@@ -441,7 +444,7 @@ a:focus {
 }
 
 .category_section .heading_container h2 {
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid black;
 }
 
 .category_section .category_container {
@@ -508,7 +511,7 @@ a:focus {
   display: inline-block;
   padding: 10px 45px;
   background-color: #ff4f5a;
-  color: #ffffff;
+  color: black;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
@@ -637,7 +640,7 @@ a:focus {
 .info_section {
   position: relative;
   background-color: #ffbffe;
-  color: #ffffff;
+  color: black;
 }
 
 .info_section .heading_container {
@@ -676,7 +679,7 @@ a:focus {
 }
 
 .info_section .info_top .info_logo span {
-  color: #ffffff;
+  color: black;
   font-weight: bold;
   font-size: 32px;
 }
@@ -715,7 +718,7 @@ a:focus {
 }
 
 .info_section ul li a {
-  color: #ffffff;
+  color: black;
 }
 
 .info_section .info_link-box {
@@ -738,12 +741,12 @@ a:focus {
   display: inline-block;
   padding: 8px 40px;
   background-color: #ff4f5a;
-  color: #ffffff;
+  color: black;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid transparent;
   border-radius: 0;
-  border: 1.5px solid #ffffff;
+  border: 1.5px solid black;
   margin-top: 15px;
   text-transform: uppercase;
   font-size: 15px;
@@ -763,7 +766,7 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   margin: 30px 0;
-  color: #ffffff;
+  color: black;
 }
 
 .info_section .info_contact .link-box .img-box {

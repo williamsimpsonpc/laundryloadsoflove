@@ -3,6 +3,10 @@
 
 @media (max-width: 1120px) {}
 
+.nav-sized{
+  font-size: 40px;
+}
+
 #col-1 {
   background-color: yellow;
   flex: 1;
@@ -21,8 +25,8 @@
 
 .navbar-brand span {
   font-weight: bold;
-  color: #ffffff;
-  font-size: 35px;
+  color: black;
+  font-size: 50px;
 }
 
 .info_section .info_top .info_logo img {
@@ -31,9 +35,9 @@
 }
 
 .info_section .info_top .info_logo span {
-  color: #ffffff;
+  color: black;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 50px;
 }
 
 .googleform {
@@ -44,7 +48,11 @@
 
 
 @media (max-width: 992px) {
-	
+
+.nav-sized{
+  font-size: 40px;
+}
+
 #col-1 {
   background-color: yellow;
   flex: 1;
@@ -63,7 +71,7 @@
 
 .navbar-brand span {
   font-weight: bold;
-  color: #ffffff;
+  color: black;
   font-size: 18px;
 }
 
@@ -73,16 +81,10 @@
 }
 
 .info_section .info_top .info_logo span {
-  color: #ffffff;
+  color: black;
   font-weight: bold;
   font-size: 25px;
 }
-
-
-
-
-
-
 
 
   .hero_area {
@@ -139,7 +141,13 @@
 }
 
 @media (max-width: 767px) {
-	
+
+
+.nav-sized{
+  font-size: 40px;
+}
+
+
 #col-1 {
   background-color: yellow;
   flex: 1;
@@ -231,6 +239,10 @@
 
 @media (max-width: 576px) {
 
+  .nav-sized{
+  font-size: 40px;
+}
+
 	#col-1 {
   background-color: yellow;
   flex: 1;
@@ -296,7 +308,11 @@
 
 @media (max-width: 360px) {}
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) {\
+
+  .nav-sized{
+  font-size: 40px;
+}
 	
 	#col-1 {
   background-color: yellow;
