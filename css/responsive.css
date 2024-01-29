@@ -3,6 +3,11 @@
 
 @media (min-width: 1120px) {}
 
+.followusonig {
+  font-family: 'Katibeh', serif;
+  font-size: 75px;
+}
+
 
 .introvideo{
   width:540px;
@@ -62,6 +67,11 @@
 .introvideo{
   width:486px;
   height:562px;
+}
+
+.followusonig {
+  font-family: 'Katibeh', serif;
+  font-size: 50px;
 }
 
 .nav-sized{
@@ -158,6 +168,11 @@
 }
 
 @media (max-width: 767px) {
+
+  .followusonig {
+  font-family: 'Katibeh', serif;
+  font-size: 45px;
+}
 
 .navbar-brand span {
   font-weight: bold;
@@ -268,6 +283,11 @@
 
 @media (max-width: 576px) {
 
+  .followusonig {
+  font-family: 'Katibeh', serif;
+  font-size: 35px;
+}
+
 
 .navbar-brand span {
   font-weight: bold;
@@ -306,6 +326,11 @@
 }
 
 @media (max-width: 480px) {
+
+  .followusonig {
+  font-family: 'Katibeh', serif;
+  font-size: 35px;
+}
   .navbar-brand span {
   font-weight: bold;
   color: black;
@@ -319,7 +344,10 @@
 
 @media (max-width: 420px) {
 
-
+.followusonig {
+  font-family: 'Katibeh', serif;
+  font-size: 35px;
+}
   .navbar-brand span {
   font-weight: bold;
   color: black;
@@ -375,6 +403,12 @@
 @media (max-width: 360px) {}
 
 @media (min-width: 1200px) {
+
+
+.followusonig {
+  font-family: 'Katibeh', serif;
+  font-size: 75px;
+}
 
 .introvideo{
   width:540px;
