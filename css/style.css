@@ -125,9 +125,6 @@ ul{
   font-family: 'Katibeh', serif;
 }
 
-.mission{
- font-size: 50px !important;
-}
 
 .splitscreen {
   display: flex;
@@ -177,7 +174,6 @@ ul{
 
 /*header section*/
 .hero_area {
-  height: calc(100vh - 30px);
   background: -webkit-gradient(linear, left top, right top, color-stop(55%, #c0d1fa), color-stop(55%, #ffbffe));
   background: linear-gradient(to right, #c0d1fa 55%, #ffbffe 55%);
   display: -webkit-box;
@@ -189,6 +185,7 @@ ul{
           flex-direction: column;
   position: relative;
 }
+
 
 .sub_page .hero_area {
   height: auto;

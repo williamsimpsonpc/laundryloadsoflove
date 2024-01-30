@@ -3,11 +3,18 @@
 
 @media (min-width: 1120px) {}
 
+.mission-head{
+ font-size: 50px !important;
+}
+
+.mission-txt{
+ font-size: 40px !important;
+}
+
 .followusonig {
   font-family: 'Katibeh', serif;
   font-size: 75px;
 }
-
 
 .introvideo{
   width:540px;
@@ -63,6 +70,15 @@
 
 
 @media (max-width: 992px) {
+
+
+.mission-head{
+ font-size: 40px !important;
+}
+
+.mission-txt{
+ font-size: 30px !important;
+}
 
 .introvideo{
   width:486px;
@@ -168,6 +184,14 @@
 }
 
 @media (max-width: 767px) {
+
+.mission-head{
+ font-size: 40px !important;
+}
+
+.mission-txt{
+ font-size: 30px !important;
+}
 
   .followusonig {
   font-family: 'Katibeh', serif;
@@ -283,6 +307,14 @@
 
 @media (max-width: 576px) {
 
+.mission-head{
+ font-size: 35px !important;
+}
+
+.mission-txt{
+ font-size: 25px !important;
+}
+
   .followusonig {
   font-family: 'Katibeh', serif;
   font-size: 35px;
@@ -326,6 +358,15 @@
 }
 
 @media (max-width: 480px) {
+
+
+.mission-head{
+ font-size: 35px !important;
+}
+
+.mission-txt{
+ font-size: 25px !important;
+}
 
   .followusonig {
   font-family: 'Katibeh', serif;
@@ -404,6 +445,13 @@
 
 @media (min-width: 1200px) {
 
+.mission-head{
+ font-size: 50px !important;
+}
+
+.mission-txt{
+ font-size: 35px !important;
+}
 
 .followusonig {
   font-family: 'Katibeh', serif;
