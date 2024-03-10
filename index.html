@@ -96,40 +96,36 @@
 
         <!-- end header section -->
         <!-- slider section -->
-        <section class="slider_section">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container-fluid"">
-                        <div class="row">
-                            <div class="submission_form">
+        <div class="top_row">
+            <div class="submission_form">
 
-                                <form id="smartBinForm" onsubmit="validateForm(event)">
-                                    <h1 class="font unselectable">Stewart Hall Smart Bin Form</h1>
+                <form id="smartBinForm" onsubmit="validateForm(event)">
+                    <h1 class="font unselectable">Stewart Hall Smart Bin Form</h1>
 
-                                    <!-- Email -->
-                                    <label for="email" class="underline unselectable">Email:</label><br>
-                                    <input type="email" id="email" name="email"><br>
+                    <!-- Email -->
+                    <label for="email" class="underline unselectable">Email:</label><br>
+                    <input type="email" id="email" name="email"><br>
 
-                                    <!-- PID -->
-                                    <label for="pid" class="underline unselectable">PID:</label><br>
-                                    <input type="text" id="pid" name="pid"><br>
+                    <!-- PID -->
+                    <label for="pid" class="underline unselectable">PID:</label><br>
+                    <input type="text" id="pid" name="pid"><br>
 
-                                    <!-- Whether bin is full -->
-                                    <label for="bin_full" class="centered-label underline unselectable">Is the bin
-                                        full?</label><br>
-                                    <div class="radio-group">
-                                        <div class="radio-option">
-                                            <label for="yes" class="unselectable">Yes</label>
-                                            <input type="radio" id="yes" name="full" value="yes">
-                                        </div>
-                                        <div class="radio-option">
-                                            <label for="no" class="unselectable">No</label>
-                                            <input type="radio" id="no" name="full" value="no">
-                                        </div>
-                                    </div>
+                    <!-- Whether bin is full -->
+                    <label for="bin_full" class="centered-label underline unselectable">Is the bin
+                        full?</label><br>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <label for="yes" class="unselectable">Yes</label>
+                            <input type="radio" id="yes" name="full" value="yes">
+                        </div>
+                        <div class="radio-option">
+                            <label for="no" class="unselectable">No</label>
+                            <input type="radio" id="no" name="full" value="no">
+                        </div>
+                    </div>
 
-                                    <!-- Type of donation -->
-                                    <!-- <select id="donationType" name="donationType">
+                    <!-- Type of donation -->
+                    <!-- <select id="donationType" name="donationType">
                                         <option value="" selected disabled>Choose an option</option>
                                         <option value="shirt">Shirt</option>
                                         <option value="sweatshirt">Sweatshirt</option>
@@ -137,55 +133,47 @@
                                     </select><br> -->
 
 
-                                    <label for="numShirts" class="centered-label underline unselectable">Number of
-                                        Shirts:</label><br>
-                                    <input type="number" id="shirt" name="shirt" min="0" placeholder="0"><br>
-                                    <label for="numSweatshirts" class="centered-label underline unselectable">Number of
-                                        Sweatshirts:</label><br>
-                                    <input type="number" id="sweatshirt" name="sweatshirt" min="0" placeholder="0"><br>
-                                    <label for="numPants" class="centered-label underline unselectable">Number of
-                                        Pants:</label><br>
-                                    <input type="number" id="pants" name="pants" min="0" placeholder="0"><br>
-                                    <label for="numOther" class="centered-label underline unselectable">Number of
-                                        Other Donated Items:</label><br>
-                                    <input type="number" id="other" name="other" min="0" placeholder="0"><br>
+                    <label for="numShirts" class="centered-label underline unselectable">Number of
+                        Shirts:</label><br>
+                    <input type="number" id="shirt" name="shirt" min="0" placeholder="0"><br>
+                    <label for="numSweatshirts" class="centered-label underline unselectable">Number of
+                        Sweatshirts:</label><br>
+                    <input type="number" id="sweatshirt" name="sweatshirt" min="0" placeholder="0"><br>
+                    <label for="numPants" class="centered-label underline unselectable">Number of
+                        Pants:</label><br>
+                    <input type="number" id="pants" name="pants" min="0" placeholder="0"><br>
+                    <label for="numOther" class="centered-label underline unselectable">Number of
+                        Other Donated Items:</label><br>
+                    <input type="number" id="other" name="other" min="0" placeholder="0"><br>
 
-                                    <!-- T&C -->
-                                    <div class="last_checkboxes unselectable">
-                                        <label for="tc" class="underline unselectable">I agree to the <a
-                                                href="terms.html">Terms and
-                                                Conditions</a>.</label><br>
-                                        <input type="checkbox" id="tc" name="tc">
-                                    </div>
+                    <!-- T&C -->
+                    <div class="last_checkboxes unselectable">
+                        <label for="tc" class="underline unselectable">I agree to the <a href="terms.html">Terms and
+                                Conditions</a>.</label><br>
+                        <input type="checkbox" id="tc" name="tc">
+                    </div>
 
-                                    <!-- Updates -->
-                                    <div class="last_checkboxes unselectable">
-                                        <label for="updates" class="underline unselectable">Send me updates!</label><br>
-                                        <input type="checkbox" id="updates" name="updates">
-                                    </div>
+                    <!-- Updates -->
+                    <div class="last_checkboxes unselectable">
+                        <label for="updates" class="underline unselectable">Send me updates!</label><br>
+                        <input type="checkbox" id="updates" name="updates">
+                    </div>
 
-                                    <!-- Submit button -->
-                                    <input type="submit" value="Submit"">
+                    <!-- Submit button -->
+                    <input type="submit" value="Submit"">
                                 </form>
 
                             <h2 id="formResponse"></h2>
-                            </div>
-
-
-                            <div style=" width: 50vw" class="center-contents-hv">
-                                <iframe class="introvideo"
-                                    src="https://youtube.com/embed/rbA3BuGd2MA?si=AYTFJp_b-p7ZjZ0F"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
             </div>
-        </section>
+
+
+            <div class="center-contents-hv introwidth">
+                <iframe class="introvideo" src="https://youtube.com/embed/rbA3BuGd2MA?si=AYTFJp_b-p7ZjZ0F"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
         <!-- end slider section -->
 
     </div>

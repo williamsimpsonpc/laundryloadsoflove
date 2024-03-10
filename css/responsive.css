@@ -13,11 +13,6 @@
   font-size: 75px;
 }
 
-.introvideo {
-  width: 540px;
-  height: 625px;
-}
-
 .nav-sized {
   font-size: 40px;
 }
@@ -80,11 +75,6 @@
 
   .mission-txt {
     font-size: 30px !important;
-  }
-
-  .introvideo {
-    width: 486px;
-    height: 562px;
   }
 
   .followusonig {
@@ -214,11 +204,6 @@
     font-size: 38px;
   }
 
-  .introvideo {
-    width: 432px;
-    height: 500px;
-  }
-
   .nav-sized {
     font-size: 40px;
   }
@@ -307,8 +292,45 @@
     margin: 0;
   }
 
+  .top_row {
+    flex-direction: column;
+  }
+
+  .submission_form {
+    width: 100%;
+  }
+
+  .introwidth {
+    width: 100%;
+  }
+
+  .introvideo {
+    width: 80vw;
+    height: 625px;
+    margin: 50px auto;
+  }
+
+}
+
+@media (min-width: 767.1px) {
+  .top_row {
+    display: flex;
+    flex-direction: row;
+  }
 
 
+  .submission_form {
+    width: 50vw;
+  }
+
+  .introwidth {
+    width: 50vw;
+  }
+
+  .introvideo {
+    width: 45vw;
+    height: 625px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -337,11 +359,6 @@
 
   .info-logo {
     font-size: 30px;
-  }
-
-  .introvideo {
-    width: 324px;
-    height: 375px;
   }
 
   .nav-sized {
@@ -470,11 +487,6 @@
   .followusonig {
     font-family: 'Katibeh', serif;
     font-size: 75px;
-  }
-
-  .introvideo {
-    width: 540px;
-    height: 625px;
   }
 
   .info-logo {
