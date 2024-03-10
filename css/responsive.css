@@ -1,14 +1,11 @@
-
-
-
 @media (min-width: 1120px) {}
 
-.mission-head{
- font-size: 50px !important;
+.mission-head {
+  font-size: 50px !important;
 }
 
-.mission-txt{
- font-size: 40px !important;
+.mission-txt {
+  font-size: 40px !important;
 }
 
 .followusonig {
@@ -16,12 +13,12 @@
   font-size: 75px;
 }
 
-.introvideo{
-  width:540px;
-  height:625px;
+.introvideo {
+  width: 540px;
+  height: 625px;
 }
 
-.nav-sized{
+.nav-sized {
   font-size: 40px;
 }
 
@@ -34,37 +31,42 @@
 }
 
 /*LOGO SIZE*/
-.navbar-brand img {
-  width: 150px;
-  margin-right: 5px;
+.navbar-branding img {
+  width: 80px;
+  margin-right: 20px;
 }
 
 
-.navbar-brand span {
+.navbar-branding span {
   font-weight: bold;
   color: black;
   font-size: 35px;
+  line-height: 0.7;
+  margin-top: -15px;
 }
 
-.info-logo{
+.info-logo {
   font-size: 10px;
 }
 
 .info_section .info_top .info_logo img {
-  width: 150px;
-  Height: 150px;
+  width: 100px;
+  Height: 100px;
 }
 
 .info_section .info_top .info_logo span {
   color: black;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 40px;
+  line-height: 0.7;
+  margin-top: 13px;
+  margin-left: 17px;
 }
 
 .googleform {
-    width: 700px;
-    height: 600px;
-  }
+  width: 700px;
+  height: 600px;
+}
 
 
 
@@ -72,62 +74,64 @@
 @media (max-width: 992px) {
 
 
-.mission-head{
- font-size: 40px !important;
-}
+  .mission-head {
+    font-size: 40px !important;
+  }
 
-.mission-txt{
- font-size: 30px !important;
-}
+  .mission-txt {
+    font-size: 30px !important;
+  }
 
-.introvideo{
-  width:486px;
-  height:562px;
-}
+  .introvideo {
+    width: 486px;
+    height: 562px;
+  }
 
-.followusonig {
-  font-family: 'Katibeh', serif;
-  font-size: 50px;
-}
+  .followusonig {
+    font-family: 'Katibeh', serif;
+    font-size: 50px;
+  }
 
-.nav-sized{
-  font-size: 40px;
-}
+  .nav-sized {
+    font-size: 40px;
+  }
 
-#col-1 {
-  flex: 1;
-}
+  #col-1 {
+    flex: 1;
+  }
 
-#col-2 {
-  flex: 2;
-}
+  #col-2 {
+    flex: 2;
+  }
 
-/*LOGO SIZE*/
-.navbar-brand img {
-  width: 75px;
-  margin-right: 1px;
-}
+  /*LOGO SIZE*/
+  .navbar-branding img {
+    width: 75px;
+    margin-right: 16px;
+  }
 
-.navbar-brand span {
-  font-weight: bold;
-  color: black;
-  font-size: 30px;
-}
+  .navbar-branding span {
+    font-weight: bold;
+    color: black;
+    font-size: 30px;
+    line-height: 0.7;
+    margin-top: -15px;
+  }
 
-.info-logo{
-  font-size: 30px;
-}
+  .info-logo {
+    font-size: 30px;
+  }
 
-.info_section .info_top .info_logo img {
-  width: 75px;
-  Height: 75px;
-}
+  .info_section .info_top .info_logo img {
+    width: 75px;
+    Height: 75px;
+  }
 
-.info_section .info_top .info_logo span {
-  color: black;
-  font-weight: bold;
-  font-size: 25px;
-}
+  .info_section .info_top .info_logo span {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+  }
 
 
   .hero_area {
@@ -185,46 +189,48 @@
 
 @media (max-width: 767px) {
 
-.mission-head{
- font-size: 40px !important;
-}
+  .mission-head {
+    font-size: 40px !important;
+  }
 
-.mission-txt{
- font-size: 30px !important;
-}
+  .mission-txt {
+    font-size: 30px !important;
+  }
 
   .followusonig {
-  font-family: 'Katibeh', serif;
-  font-size: 45px;
-}
+    font-family: 'Katibeh', serif;
+    font-size: 45px;
+  }
 
-.navbar-brand span {
-  font-weight: bold;
-  color: black;
-  font-size: 38px;
-}
+  .navbar-branding span {
+    font-weight: bold;
+    color: black;
+    font-size: 38px;
+    line-height: 0.7;
+    margin-top: -15px;
+  }
 
-.info-logo{
-  font-size: 38px;
-}
+  .info-logo {
+    font-size: 38px;
+  }
 
-.introvideo{
-  width:432px;
-  height:500px;
-}
+  .introvideo {
+    width: 432px;
+    height: 500px;
+  }
 
-.nav-sized{
-  font-size: 40px;
-}
+  .nav-sized {
+    font-size: 40px;
+  }
 
 
-#col-1 {
-  flex: 1;
-}
+  #col-1 {
+    flex: 1;
+  }
 
-#col-2 {
-  flex: 2;
-}
+  #col-2 {
+    flex: 2;
+  }
 
 
   .hero_area {
@@ -307,46 +313,48 @@
 
 @media (max-width: 576px) {
 
-.mission-head{
- font-size: 35px !important;
-}
+  .mission-head {
+    font-size: 35px !important;
+  }
 
-.mission-txt{
- font-size: 25px !important;
-}
+  .mission-txt {
+    font-size: 25px !important;
+  }
 
   .followusonig {
-  font-family: 'Katibeh', serif;
-  font-size: 35px;
-}
+    font-family: 'Katibeh', serif;
+    font-size: 35px;
+  }
 
 
-.navbar-brand span {
-  font-weight: bold;
-  color: black;
-  font-size: 30px;
-}
+  .navbar-branding span {
+    font-weight: bold;
+    color: black;
+    font-size: 30px;
+    line-height: 0.7;
+    margin-top: -15px;
+  }
 
-.info-logo{
-  font-size: 30px;
-}
+  .info-logo {
+    font-size: 30px;
+  }
 
-.introvideo{
-  width:324px;
-  height:375px;
-}
+  .introvideo {
+    width: 324px;
+    height: 375px;
+  }
 
-  .nav-sized{
-  font-size: 40px;
-}
+  .nav-sized {
+    font-size: 40px;
+  }
 
-	#col-1 {
-  flex: 1;
-}
+  #col-1 {
+    flex: 1;
+  }
 
-#col-2 {
-  flex: 1.75;
-}
+  #col-2 {
+    flex: 1.75;
+  }
 
   .category_section .category_container {
     justify-content: center;
@@ -360,44 +368,50 @@
 @media (max-width: 480px) {
 
 
-.mission-head{
- font-size: 35px !important;
-}
+  .mission-head {
+    font-size: 35px !important;
+  }
 
-.mission-txt{
- font-size: 25px !important;
-}
+  .mission-txt {
+    font-size: 25px !important;
+  }
 
   .followusonig {
-  font-family: 'Katibeh', serif;
-  font-size: 35px;
-}
-  .navbar-brand span {
-  font-weight: bold;
-  color: black;
-  font-size: 29px;
-}
+    font-family: 'Katibeh', serif;
+    font-size: 35px;
+  }
 
-  .info-logo{
+  .navbar-branding span {
+    font-weight: bold;
+    color: black;
+    font-size: 29px;
+    line-height: 0.7;
+    margin-top: -15px;
+  }
+
+  .info-logo {
     font-size: 29px;
   }
 }
 
 @media (max-width: 420px) {
 
-.followusonig {
-  font-family: 'Katibeh', serif;
-  font-size: 35px;
-}
-  .navbar-brand span {
-  font-weight: bold;
-  color: black;
-  font-size: 23px;
-}
+  .followusonig {
+    font-family: 'Katibeh', serif;
+    font-size: 35px;
+  }
 
-.info-logo{
-  font-size: 23px;
-}
+  .navbar-branding span {
+    font-weight: bold;
+    color: black;
+    font-size: 23px;
+    line-height: 0.7;
+    margin-top: -15px;
+  }
+
+  .info-logo {
+    font-size: 23px;
+  }
 
 
   .client_section .detail-box {
@@ -418,7 +432,7 @@
   }
 
   .slider_section ol.carousel-indicators {
-    right: 0; 
+    right: 0;
   }
 
   .client_section .carousel-control-prev,
@@ -445,41 +459,41 @@
 
 @media (min-width: 1200px) {
 
-.mission-head{
- font-size: 50px !important;
-}
+  .mission-head {
+    font-size: 50px !important;
+  }
 
-.mission-txt{
- font-size: 35px !important;
-}
+  .mission-txt {
+    font-size: 35px !important;
+  }
 
-.followusonig {
-  font-family: 'Katibeh', serif;
-  font-size: 75px;
-}
+  .followusonig {
+    font-family: 'Katibeh', serif;
+    font-size: 75px;
+  }
 
-.introvideo{
-  width:540px;
-  height:625px;
-}
+  .introvideo {
+    width: 540px;
+    height: 625px;
+  }
 
-.info-logo{
-  font-size: 20px;
-}
+  .info-logo {
+    font-size: 20px;
+  }
 
-  .nav-sized{
-  font-size: 40px;
-}
-	
-	#col-1 {
-  flex: 1;
-}
+  .nav-sized {
+    font-size: 40px;
+  }
 
-#col-2 {
-  flex: 4;
-}
+  #col-1 {
+    flex: 1;
+  }
 
-	
+  #col-2 {
+    flex: 4;
+  }
+
+
   .container {
     max-width: 1170px;
   }
