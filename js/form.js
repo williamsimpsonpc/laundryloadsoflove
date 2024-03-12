@@ -3,6 +3,40 @@ function validateEmail(email) {
     return re.test(email);
 }
 
+function writeData(email, pid, shirt, sweatshirt, pants, other) {
+    return fetch('https://sheetdb.io/api/v1/lfdno8lzi2h3s', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            data: [
+                {
+                    'ID': "INCREMENT",
+                    'EMAIL': email,
+                    'PID': pid,
+                    'SHIRTS': shirt,
+                    'SWEATSHIRTS': sweatshirt,
+                    'PANTS': pants,
+                    'OTHER': other,
+                    'DATE': "DATETIME"
+                }
+            ]
+        })
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            return data;
+        });
+}
+
+async function readData() {
+    const response = await fetch('https://sheetdb.io/api/v1/lfdno8lzi2h3s');
+    const data = await response.json();
+    return data;
+}
+
 function validateForm(event) {
     event.preventDefault();
 
@@ -106,79 +140,68 @@ function validateForm(event) {
 
     var response = document.getElementById('formResponse');
 
-    // run .php file to update database
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/form_submit.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send("pid=" + pid.value + "&email=" + email.value + "&shirt=" + numShirts.value + "&sweatshirt=" + numSweatshirts.value + "&pants=" + numPants.value + "&other=" + numOther.value);
-    // if the response isn't "Record added successfully", display an error message
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            if (xhr.responseText != "Record added successfully") {
-                if (xhr.responseText == "Error: Invalid donation type") {
-                    response.innerHTML = "Error submitting donation. Invalid donation type.";
-                } else {
-                    console.log(xhr.responseText);
-                    response.innerHTML = "Error submitting donation. Please try again later.";
-                    response.style.color = "red";
-                }
-            } else {
+    // Write the data to the Google Sheets database
+    writeData(email.value, pid.value, numShirts.value, numSweatshirts.value, numPants.value, numOther.value)
+        .then((data) => {
+            // data should be a json object with a "created" property that is 1
+            console.log("Response: ", data);
+            if (data.created == 1) {
+                // Display a success message
                 response.innerHTML = "Donation submitted successfully!";
                 response.style.color = "green";
                 form.reset();
+            } else {
+                // Display an error message
+                response.innerHTML = "Error submitting donation. Please try again later.";
+                response.style.color = "red";
             }
-        }
-    };
+        });
+    
 
     return true;
 }
 
 function readTopDonors() {
-    // Make an XHR request to the PHP script
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../php/count_donors.php', true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    readData()
+        .then((data) => {
+            // Access the top donors data
+            var topDonors = data;
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Parse the JSON response
-            var response = JSON.parse(xhr.responseText);
-
-            // Check for errors
-            if (response.error) {
-                console.error('Error: ' + response.error);
-            } else {
-                // Access the top donors data
-                var topDonors = response.topDonors;
-
-                // Load the data into a table
-                console.log(topDonors);
-                
-                var table = document.getElementById('donor_table');
-                while (table.rows.length > 1) {
-                    table.deleteRow(1);
+            // Create a list of all the emails with their corresponding amount of all types donated
+            var emailDonations = {};
+            for (var i = 0; i < topDonors.length; i++) {
+                if (emailDonations[topDonors[i].EMAIL] == undefined) {
+                    emailDonations[topDonors[i].EMAIL] = 0;
                 }
-                for (var i = 0; i < topDonors.length; i++) {
-                    var row = table.insertRow(i + 1);
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    cell1.innerHTML = " " + (i + 1) + ". " + topDonors[i].email;
-                    cell2.innerHTML = topDonors[i].totalDonations;
-                }
-
-                if (topDonors.length < 5) {
-                    var row = table.insertRow(topDonors.length + 1);
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    cell1.innerHTML = "This could be you!";
-                    cell2.innerHTML = "...";
-                }
+                emailDonations[topDonors[i].EMAIL] += parseInt(topDonors[i].SHIRTS) + parseInt(topDonors[i].SWEATSHIRTS) + parseInt(topDonors[i].PANTS) + parseInt(topDonors[i].OTHER);
             }
-        }
-    };
 
-    // Send the XHR request (assuming no data needs to be sent)
-    xhr.send();
+            // sort the emails by the amount of donations
+            var sortedEmails = Object.keys(emailDonations).sort(function(a, b) {
+                return emailDonations[b] - emailDonations[a];
+            });
+
+            // Load the data into a table
+            var table = document.getElementById('donor_table');
+            while (table.rows.length > 1) {
+                table.deleteRow(1);
+            }
+            for (var i = 0; i < sortedEmails.length; i++) {
+                var row = table.insertRow(i + 1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = " " + (i + 1) + ". " + sortedEmails[i];
+                cell2.innerHTML = emailDonations[sortedEmails[i]];
+            }
+
+            if (sortedEmails.length < 5) {
+                var row = table.insertRow(sortedEmails.length + 1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = "This could be you!";
+                cell2.innerHTML = "...";
+            }
+        });
 }
 
 // run readTopDonors() when the page loads
