@@ -4,7 +4,7 @@ function validateEmail(email) {
 }
 
 function writeData(email, pid, shirt, sweatshirt, pants, other) {
-    return fetch('https://sheetdb.io/api/v1/lfdno8lzi2h3s', {
+    return fetch('https://sheetdb.io/api/v1/6zemcyqifsvsy', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -32,7 +32,7 @@ function writeData(email, pid, shirt, sweatshirt, pants, other) {
 }
 
 async function readData() {
-    const response = await fetch('https://sheetdb.io/api/v1/lfdno8lzi2h3s');
+    const response = await fetch('https://sheetdb.io/api/v1/6zemcyqifsvsy');
     const data = await response.json();
     return data;
 }
@@ -167,13 +167,20 @@ function readTopDonors() {
             // Access the top donors data
             var topDonors = data;
 
+            var totalDonations = 0;
+
+            var totalDonationsLabel = document.getElementById('totalDonations');
+
             // Create a list of all the emails with their corresponding amount of all types donated
             var emailDonations = {};
             for (var i = 0; i < topDonors.length; i++) {
                 if (emailDonations[topDonors[i].EMAIL] == undefined) {
                     emailDonations[topDonors[i].EMAIL] = 0;
                 }
-                emailDonations[topDonors[i].EMAIL] += parseInt(topDonors[i].SHIRTS) + parseInt(topDonors[i].SWEATSHIRTS) + parseInt(topDonors[i].PANTS) + parseInt(topDonors[i].OTHER);
+                
+                var numDonations = parseInt(topDonors[i].SHIRTS) + parseInt(topDonors[i].SWEATSHIRTS) + parseInt(topDonors[i].PANTS) + parseInt(topDonors[i].OTHER);
+                totalDonations += numDonations;
+                emailDonations[topDonors[i].EMAIL] += numDonations;
             }
 
             // sort the emails by the amount of donations
