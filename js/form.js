@@ -204,7 +204,7 @@ function readTopDonors() {
                 var row = table.insertRow(i + 1);
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
-                cell1.innerHTML = " " + (i + 1) + ". " + sortedEmails[i];
+                cell1.innerHTML = " " + (i + 1) + ". " + sortedEmails[i].split('@')[0];
                 cell2.innerHTML = emailDonations[sortedEmails[i]];
             }
 
