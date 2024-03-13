@@ -1075,7 +1075,7 @@ a:focus {
 }
 
 #smartBinForm select {
-    width: 60%;
+    width: 80%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #000;
@@ -1090,7 +1090,7 @@ a:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60%;
+    width: 80%;
 }
 
 .radio-group {
