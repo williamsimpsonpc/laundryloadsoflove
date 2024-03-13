@@ -72,14 +72,7 @@ function validateForm(event) {
         email_label.innerHTML = "Email:";
         email.style.border = "none";
     }
-    if (pid.value == "") {
-        pid_label.innerHTML = "PID: <span class='required'>*</span>";
-        pid.style.border = "2px solid red";
-        error = true;
-    } else {
-        pid_label.innerHTML = "PID:";
-        pid.style.border = "none";
-    }
+
     if (full[0].checked == false && full[1].checked == false) {
         full_label.innerHTML = "Is the bin full? <span class='required'>*</span>";
         error = true;
@@ -93,6 +86,12 @@ function validateForm(event) {
     } else {
         tc_label.innerHTML = "I agree to the <a href='terms.html'>Terms and Conditions</a>.";
     }
+
+    // Convert all values to numbers (just in case they're empty strings or something else)
+    numShirts.value = parseInt(numShirts.value);
+    numSweatshirts.value = parseInt(numSweatshirts.value);
+    numPants.value = parseInt(numPants.value);
+    numOther.value = parseInt(numOther.value);
 
     // if any clothing values aren't numbers, set them to 0
     if (isNaN(numShirts.value)) {
@@ -122,9 +121,12 @@ function validateForm(event) {
 
     // ensure PID is in format AXXXXXXXX
     if (pid.value.length != 9 || pid.value[0] != 'A' || isNaN(pid.value.substring(1))) {
-        pid_label.innerHTML = "PID: <span class='required'>*</span>";
-        pid.style.border = "2px solid red";
-        error = true;
+        // if pid isn't empty, it's an error
+        if (pid.value != "") {
+            pid_label.innerHTML = "PID: <span class='required'>*</span>";
+            pid.style.border = "2px solid red";
+            error = true;
+        }
     }
 
     // ensure email is an email
