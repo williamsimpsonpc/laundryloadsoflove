@@ -168,7 +168,7 @@ function parseIntOrZero(n) {
     return isNaN(parsed) ? 0 : parsed;
 }
 
-const numTopDonors = 5;
+const numTopDonors = 10;
 
 function readTopDonors() {
     readData()
