@@ -168,6 +168,8 @@ function parseIntOrZero(n) {
     return isNaN(parsed) ? 0 : parsed;
 }
 
+const numTopDonors = 5;
+
 function readTopDonors() {
     readData()
         .then((data) => {
@@ -190,6 +192,10 @@ function readTopDonors() {
                 emailDonations[topDonors[i].EMAIL] += numDonations;
             }
 
+            // TODO: When we switch to clearing the DB every month, we need to read this from another place
+            //       It may be better to just do this manually, once a month.
+            totalDonationsLabel.innerHTML = totalDonations;
+
             // sort the emails by the amount of donations
             var sortedEmails = Object.keys(emailDonations).sort(function(a, b) {
                 return emailDonations[b] - emailDonations[a];
@@ -200,7 +206,8 @@ function readTopDonors() {
             while (table.rows.length > 1) {
                 table.deleteRow(1);
             }
-            for (var i = 0; i < sortedEmails.length; i++) {
+            var size = sortedEmails.length < numTopDonors ? sortedEmails.length : numTopDonors;
+            for (var i = 0; i < size; i++) {
                 var row = table.insertRow(i + 1);
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
