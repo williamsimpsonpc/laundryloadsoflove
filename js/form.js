@@ -163,6 +163,11 @@ function validateForm(event) {
     return true;
 }
 
+function parseIntOrZero(n) {
+    var parsed = parseInt(n);
+    return isNaN(parsed) ? 0 : parsed;
+}
+
 function readTopDonors() {
     readData()
         .then((data) => {
@@ -180,7 +185,7 @@ function readTopDonors() {
                     emailDonations[topDonors[i].EMAIL] = 0;
                 }
                 
-                var numDonations = parseInt(topDonors[i].SHIRTS) + parseInt(topDonors[i].SWEATSHIRTS) + parseInt(topDonors[i].PANTS) + parseInt(topDonors[i].OTHER);
+                var numDonations = parseIntOrZero(topDonors[i].SHIRTS) + parseIntOrZero(topDonors[i].SWEATSHIRTS) + parseIntOrZero(topDonors[i].PANTS) + parseIntOrZero(topDonors[i].OTHER);
                 totalDonations += numDonations;
                 emailDonations[topDonors[i].EMAIL] += numDonations;
             }
