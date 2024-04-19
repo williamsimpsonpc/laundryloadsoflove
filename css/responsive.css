@@ -167,7 +167,7 @@
   }
 
   .info_section .info_contact .link-box .img-box {
-    margin-right: 8px;
+    margin-right: 20px;
   }
 
   .googleform {
@@ -330,6 +330,12 @@
   .introvideo {
     width: 45vw;
     height: 625px;
+  }
+
+  .info_box {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
   }
 }
 

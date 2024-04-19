@@ -1216,3 +1216,21 @@ a:focus {
 .halfwidth {
   width: 50%;
 }
+
+.college-banner {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.halllogo {
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  margin: auto;
+}
+
+.img-box {
+  margin-right: 20px;
+}

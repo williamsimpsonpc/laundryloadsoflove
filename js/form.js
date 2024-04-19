@@ -3,6 +3,8 @@ function validateEmail(email) {
     return re.test(email);
 }
 
+var which_database = "invalid";
+
 function writeData(email, pid, shirt, sweatshirt, pants, other) {
     return fetch('https://sheetdb.io/api/v1/6zemcyqifsvsy', {
         method: 'POST',
@@ -225,5 +227,79 @@ function readTopDonors() {
         });
 }
 
-// run readTopDonors() when the page loads
-window.onload = readTopDonors;
+document.addEventListener('DOMContentLoaded', function() {
+    readTopDonors();
+
+    // get the url query (?hall=...) and alert the hall
+    var url = new URL(window.location.href);
+    var hall = url.searchParams.get('hall');
+    if (hall == null) {
+        hall = "stewart"; // workaround for existing bins without the ?hall attribute
+    }
+
+    var college = "warren";
+
+    var form_text = document.getElementById('halltext');
+    switch (hall) {
+        case "stewart":
+            form_text.innerHTML = "Stewart Hall";
+            college = "warren";
+            break;
+        case "frankfurter":
+            form_text.innerHTML = "Frankfurter Hall";
+            college = "warren";
+            break;
+        case "harlan":
+            form_text.innerHTML = "Harlan Hall";
+            college = "warren";
+            break;
+        case "goldberg":
+            form_text.innerHTML = "Goldberg Hall";
+            college = "warren";
+            break;
+        case "douglas":
+            form_text.innerHTML = "Douglas Hall";
+            college = "warren";
+            break;
+        case "brown":
+            form_text.innerHTML = "Brown Hall";
+            college = "warren";
+            break;
+        case "brennan":
+            form_text.innerHTML = "Brennan Hall";
+            college = "warren";
+            break;
+        case "black":
+            form_text.innerHTML = "Black Hall";
+            college = "warren";
+            break;
+        case "bates":
+            form_text.innerHTML = "Bates Hall";
+            college = "warren";
+            break;
+        case "brown":
+            form_text.innerHTML = "Brown Hall";
+            college = "warren";
+            break;
+        case "campuscenter1":
+            form_text.innerHTML = "Campus Center";
+            college = "revelle";
+            break;
+        case "librarywalk":
+            form_text.innerHTML = "Library Walk";
+            college = "librarywalk";
+            break;
+        default:
+            form_text.innerHTML = "Invalid Hall";
+            college = "invalid";
+            alert("Invalid hall! Try scanning the QR code again.");
+            break;
+    }
+
+    var form_logo = document.getElementById('collegelogo');
+    form_logo.src = "images/" + college + ".png";
+
+    form_text.innerHTML = form_text.innerHTML + " Smart Bin Form";
+
+    which_database = hall + "_database";
+});
