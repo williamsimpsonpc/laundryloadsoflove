@@ -5,8 +5,16 @@ function validateEmail(email) {
 
 var which_database = "invalid";
 
+var sheetdb = "https://sheetdb.io/api/v1/ctndyj1xuv0wr";
+
 function writeData(email, pid, shirt, sweatshirt, pants, other) {
-    return fetch('https://sheetdb.io/api/v1/6zemcyqifsvsy', {
+    if (which_database == "invalid" || which_database == "invalid-bad-hall") {
+        return new Promise((resolve, reject) => {
+            resolve({ created: 0 });
+        });
+    }
+
+    return fetch(sheetdb, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -22,7 +30,8 @@ function writeData(email, pid, shirt, sweatshirt, pants, other) {
                     'SWEATSHIRTS': sweatshirt,
                     'PANTS': pants,
                     'OTHER': other,
-                    'DATE': "DATETIME"
+                    'DATE': "DATETIME",
+                    'HALL': which_database
                 }
             ]
         })
@@ -34,13 +43,23 @@ function writeData(email, pid, shirt, sweatshirt, pants, other) {
 }
 
 async function readData() {
-    const response = await fetch('https://sheetdb.io/api/v1/6zemcyqifsvsy');
+    const response = await fetch(sheetdb);
     const data = await response.json();
     return data;
 }
 
 function validateForm(event) {
     event.preventDefault();
+
+    var response = document.getElementById('formResponse');
+
+    // make sure the database is valid
+    if (which_database == "invalid" || which_database == "invalid-bad-hall") {
+        response.innerHTML = "Invalid hall! Try scanning the QR code again.";
+        response.style.color = "red";
+
+        return false;
+    }
 
     var form = document.getElementById('smartBinForm');
     var email = document.getElementById('email');
@@ -141,8 +160,6 @@ function validateForm(event) {
     if (error) {
         return false;
     }
-
-    var response = document.getElementById('formResponse');
 
     // Write the data to the Google Sheets database
     writeData(email.value, pid.value, numShirts.value, numSweatshirts.value, numPants.value, numOther.value)
@@ -290,16 +307,52 @@ document.addEventListener('DOMContentLoaded', function() {
             college = "librarywalk";
             break;
         default:
-            form_text.innerHTML = "Invalid Hall";
+            form_text.innerHTML = "Laundry Loads of Love";
             college = "invalid";
+            hall = "invalid";
+            which_database = "invalid-bad-hall";
             alert("Invalid hall! Try scanning the QR code again.");
             break;
     }
 
     var form_logo = document.getElementById('collegelogo');
-    form_logo.src = "images/" + college + ".png";
+
+    if (college == "invalid") {
+        form_logo.src = "images/ucsd.svg";
+    } else {
+        form_logo.src = "images/" + college + ".png";
+    }
 
     form_text.innerHTML = form_text.innerHTML + " Smart Bin Form";
 
-    which_database = hall + "_database";
+    if (which_database == "invalid-bad-hall") {
+        var form = document.getElementById('smartBinForm');
+        var email = document.getElementById('email');
+        var pid = document.getElementById('pid');
+        var full = document.getElementsByName('full');
+        var tc = document.getElementById('tc');
+        var updates = document.getElementById('updates');
+
+        var numShirts = document.getElementById('shirt');
+        var numSweatshirts = document.getElementById('sweatshirt');
+        var numPants = document.getElementById('pants');
+        var numOther = document.getElementById('other');
+
+        // disable the form (disabled="disabled")
+        form.setAttribute("disabled", "disabled");
+        email.setAttribute("disabled", "disabled");
+        pid.setAttribute("disabled", "disabled");
+        full[0].setAttribute("disabled", "disabled");
+        full[1].setAttribute("disabled", "disabled");
+        tc.setAttribute("disabled", "disabled");
+        updates.setAttribute("disabled", "disabled");
+        numShirts.setAttribute("disabled", "disabled");
+        numSweatshirts.setAttribute("disabled", "disabled");
+        numPants.setAttribute("disabled", "disabled");
+        numOther.setAttribute("disabled", "disabled");
+
+        return;
+    }
+
+    which_database = hall;
 });
