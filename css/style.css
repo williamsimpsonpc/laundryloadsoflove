@@ -1161,7 +1161,7 @@ a:focus {
 }
 
 .freelance_section {
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
@@ -1234,4 +1234,400 @@ a:focus {
 
 .img-box {
   margin-right: 20px;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #ffebf0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  float: left;
+  margin-left: 20px;
+  margin-top: 10px;
+  height: 55px;
+}
+
+.title {
+  margin-left: 20px;
+  margin-top: -10px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-left: -164px;
+  margin-top: -20px;
+  font-size: 22px;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 13px;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+  margin-left: -20px;
+}
+
+.options {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.option {
+  margin: 0 20px;
+  font-size: 40px;
+  margin-top: -13px;
+  text-decoration: none;
+  color: #2F4858;
+  transition: color 0.1s;
+}
+
+.option:hover {
+  color: #ff7b89;
+}
+
+/* .two-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+} */
+
+/* two-column should only be used if screen width is greater than 800px */
+@media (min-width: 1080px) {
+  .two-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .left-column {
+    width: 50%;
+  }
+
+  .right-column {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .two-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .left-column {
+    width: 100%;
+  }
+
+  .right-column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 698px) {
+  .navbar {
+    height: 150px;
+  }
+
+  .leaderboard {
+    width: 90%;
+  }
+}
+
+@media (min-width: 698px) {
+  .navbar {
+    height: 75px;
+  }
+
+  .leaderboard {
+    width: 70%;
+  }
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #c0d1fa;
+  padding: 30px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.iconbox {
+  padding: 20px;
+  background-color: #ffbffe;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 55px;
+}
+
+.icon {
+  height: 55px;
+}
+
+.achievement li {
+  list-style-type: none;
+}
+
+.achievements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtext {
+  font-size: 50px;
+}
+
+.subtext-bottom {
+  margin-top: -46px;
+  margin-left: 30px;
+}
+
+.subtext-top {
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.leftfloat {
+  float: left;
+}
+
+.large {
+  font-size: 50px;
+}
+
+.medium {
+  font-size: 30px;
+}
+
+.achievement {
+  margin-top: -35px;
+}
+
+.header {
+  font-size: 30px;
+  color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.leaderboard {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+}
+
+.donor {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 60px;
+}
+
+.donor-name {
+  font-size: 50px;
+  color: white;
+  margin-top: -14px;
+  margin-right: 20px;
+}
+
+.donor-number {
+  font-size: 50px;
+  color: white;
+  margin-top: -14px;
+}
+
+.donors .donor:nth-child(1) {
+  background-color: #fddfa3; /* Soft pastel gold */
+}
+
+.donors .donor:nth-child(2) {
+  background-color: #c4cace; /* Soft pastel silver */
+}
+
+.donors .donor:nth-child(3) {
+  background-color: #cd7f32; /* Soft pastel bronze */
+}
+
+.donors .donor:nth-child(1) .donor-name,
+.donors .donor:nth-child(1) .donor-number {
+  color: #02205c;
+}
+
+.donors .donor:nth-child(2) .donor-name,
+.donors .donor:nth-child(2) .donor-number {
+  color: #02205c;
+}
+
+.donors .donor:nth-child(3) .donor-name,
+.donors .donor:nth-child(3) .donor-number {
+  color: #02205c;
+}
+
+.donors {
+  counter-reset: donor-counter; /* Initialize the counter */
+}
+
+.donor::before {
+  counter-increment: donor-counter; /* Increment the counter */
+  content: counter(donor-counter) ". "; /* Display the counter */
+  font-size: 50px;
+  color: white;
+  margin-top: -14px;
+  font-family: 'Katibeh', serif;
+}
+
+.donors .donor:nth-child(1)::before {
+  color: #02205c;
+}
+
+.donors .donor:nth-child(2)::before {
+  color: #02205c;
+}
+
+.donors .donor:nth-child(3)::before {
+  color: #02205c;
+}
+
+.college-banner {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.halllogo {
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+  margin: auto;
+}
+
+#smartBinForm input,
+#smartBinForm select,
+#smartBinForm h1 {
+  margin-bottom: 20px;
+}
+
+#smartBinForm input {
+  padding: 0.7vw;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+#smartBinForm select {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+#smartBinForm h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+#smartBinForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+}
+
+.radio-group {
+display: flex;
+justify-content: center;
+width: 100%;
+}
+
+.radio-option {
+display: flex;
+align-items: center;
+margin-right: 100px; /* Add this line */
+}
+
+.radio-option:last-child {
+margin-right: 0; /* Add this line */
+}
+
+.radio-option label {
+margin-right: 5px;
+margin-top: -15px;
+}
+
+.last_checkboxes {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 20px;
+width: 100%
+}
+
+.last_checkboxes input {
+margin-left: 10px;
+margin-top: 13px;
+}
+
+.required {
+color: red;
+}
+
+#formResponse {
+color: green;
+font-size: 2.2vw;
+text-align: center;
+margin: 20px;
+}
+
+.info-logo br {
+  line-height: 28px;
+}
+
+#achievementbox {
+  align-items: baseline !important;
+}
+
+.info_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.info_box > div {
+  margin: 0 20px;
 }

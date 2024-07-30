@@ -48,6 +48,218 @@ async function readData() {
     return data;
 }
 
+function parseIntOrZero(n) {
+    var parsed = parseInt(n);
+    return isNaN(parsed) ? 0 : parsed;
+}
+
+const numTopDonors = 10;
+
+function readTopDonors() {
+    readData()
+        .then((data) => {
+            // Access the top donors data
+            var topDonors = data;
+
+            var totalDonations = 0;
+
+            var totalDonationsLabel = document.getElementById('totalDonations');
+
+            // Create a list of all the emails with their corresponding amount of all types donated
+            var emailDonations = {};
+            for (var i = 0; i < topDonors.length; i++) {
+                if (emailDonations[topDonors[i].EMAIL] == undefined) {
+                    emailDonations[topDonors[i].EMAIL] = 0;
+                }
+                
+                var numDonations = parseIntOrZero(topDonors[i].SHIRTS) + parseIntOrZero(topDonors[i].SWEATSHIRTS) + parseIntOrZero(topDonors[i].PANTS) + parseIntOrZero(topDonors[i].OTHER);
+                totalDonations += numDonations;
+                emailDonations[topDonors[i].EMAIL] += numDonations;
+            }
+
+            // TODO: When we switch to clearing the DB every month, we need to read this from another place
+            //       It may be better to just do this manually, once a month.
+            totalDonationsLabel.innerHTML = totalDonations;
+
+            // sort the emails by the amount of donations
+            var sortedEmails = Object.keys(emailDonations).sort(function(a, b) {
+                return emailDonations[b] - emailDonations[a];
+            });
+
+            // Get the div containing the donors
+            var donorsDiv = document.getElementById('topDonors');
+
+            // empty the div
+            donorsDiv.innerHTML = '';
+
+            // each donor is a div containing:
+            /*
+                    <div class="donor">
+                        <p class="font donor-name">John Doe</p>
+                        <p class="font donor-number">50</p>
+                    </div>
+            */
+           // where John Doe is the part of the email before the @ and 50 is the number of donations
+            for (var i = 0; i < Math.min(numTopDonors, sortedEmails.length); i++) {
+                var donorDiv = document.createElement('div');
+                donorDiv.className = 'donor';
+
+                var donorName = document.createElement('p');
+                donorName.className = 'font donor-name';
+                donorName.innerHTML = sortedEmails[i].split('@')[0];
+
+                var donorNumber = document.createElement('p');
+                donorNumber.className = 'font donor-number';
+                donorNumber.innerHTML = emailDonations[sortedEmails[i]];
+
+                donorDiv.appendChild(donorName);
+                donorDiv.appendChild(donorNumber);
+
+                donorsDiv.appendChild(donorDiv);
+            }
+
+            // If there are less than 10 donors, add divs saying "this could be you"
+            if (sortedEmails.length < numTopDonors) {
+                for (var i = sortedEmails.length; i < numTopDonors; i++) {
+                    var donorDiv = document.createElement('div');
+                    donorDiv.className = 'donor';
+
+                    var donorName = document.createElement('p');
+                    donorName.className = 'font donor-name';
+                    donorName.innerHTML = 'This could be you!';
+
+                    var donorNumber = document.createElement('p');
+                    donorNumber.className = 'font donor-number';
+                    donorNumber.innerHTML = '0';
+
+                    donorDiv.appendChild(donorName);
+                    donorDiv.appendChild(donorNumber);
+
+                    donorsDiv.appendChild(donorDiv);
+                }
+            }
+        });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    readTopDonors();
+
+    // get the url query (?hall=...) and alert the hall
+    var url = new URL(window.location.href);
+    var hall = url.searchParams.get('hall');
+
+    var college = "warren";
+
+    var form_text = document.getElementById('halltext');
+    switch (hall) {
+        case "stewart":
+            form_text.innerHTML = "Stewart Hall";
+            college = "warren";
+            break;
+        case "frankfurter":
+            form_text.innerHTML = "Frankfurter Hall";
+            college = "warren";
+            break;
+        case "harlan":
+            form_text.innerHTML = "Harlan Hall";
+            college = "warren";
+            break;
+        case "goldberg":
+            form_text.innerHTML = "Goldberg Hall";
+            college = "warren";
+            break;
+        case "douglas":
+            form_text.innerHTML = "Douglas Hall";
+            college = "warren";
+            break;
+        case "brown":
+            form_text.innerHTML = "Brown Hall";
+            college = "warren";
+            break;
+        case "brennan":
+            form_text.innerHTML = "Brennan Hall";
+            college = "warren";
+            break;
+        case "black":
+            form_text.innerHTML = "Black Hall";
+            college = "warren";
+            break;
+        case "bates":
+            form_text.innerHTML = "Bates Hall";
+            college = "warren";
+            break;
+        case "brown":
+            form_text.innerHTML = "Brown Hall";
+            college = "warren";
+            break;
+        case "campuscenter1":
+            form_text.innerHTML = "Campus Center";
+            college = "revelle";
+            break;
+        case "librarywalk":
+            form_text.innerHTML = "Library Walk";
+            college = "librarywalk";
+            break;
+        default:
+            break;
+    }
+
+    if (hall == null) {
+        // hide all elements with the class "form-only"
+        var form_only = document.getElementsByClassName('form-only');
+        for (var i = 0; i < form_only.length; i++) {
+            form_only[i].style.display = "none";
+        }
+    } else {
+        // hide all elements with the class "non-form"
+        var non_form = document.getElementsByClassName('non-form');
+        for (var i = 0; i < non_form.length; i++) {
+            non_form[i].style.display = "none";
+        }
+    }
+
+    var form_logo = document.getElementById('collegelogo');
+
+    if (college == "invalid") {
+        form_logo.src = "images/ucsd.svg";
+    } else {
+        form_logo.src = "images/" + college + ".png";
+    }
+
+    form_text.innerHTML = form_text.innerHTML + " Smart Bin Form";
+
+    if (which_database == "invalid-bad-hall") {
+        var form = document.getElementById('smartBinForm');
+        var email = document.getElementById('email');
+        var pid = document.getElementById('pid');
+        var full = document.getElementsByName('full');
+        var tc = document.getElementById('tc');
+        var updates = document.getElementById('updates');
+
+        var numShirts = document.getElementById('shirt');
+        var numSweatshirts = document.getElementById('sweatshirt');
+        var numPants = document.getElementById('pants');
+        var numOther = document.getElementById('other');
+
+        // disable the form (disabled="disabled")
+        form.setAttribute("disabled", "disabled");
+        email.setAttribute("disabled", "disabled");
+        pid.setAttribute("disabled", "disabled");
+        full[0].setAttribute("disabled", "disabled");
+        full[1].setAttribute("disabled", "disabled");
+        tc.setAttribute("disabled", "disabled");
+        updates.setAttribute("disabled", "disabled");
+        numShirts.setAttribute("disabled", "disabled");
+        numSweatshirts.setAttribute("disabled", "disabled");
+        numPants.setAttribute("disabled", "disabled");
+        numOther.setAttribute("disabled", "disabled");
+
+        return;
+    }
+
+    which_database = hall;
+});
+
 function validateForm(event) {
     event.preventDefault();
 
@@ -181,178 +393,3 @@ function validateForm(event) {
 
     return true;
 }
-
-function parseIntOrZero(n) {
-    var parsed = parseInt(n);
-    return isNaN(parsed) ? 0 : parsed;
-}
-
-const numTopDonors = 10;
-
-function readTopDonors() {
-    readData()
-        .then((data) => {
-            // Access the top donors data
-            var topDonors = data;
-
-            var totalDonations = 0;
-
-            var totalDonationsLabel = document.getElementById('totalDonations');
-
-            // Create a list of all the emails with their corresponding amount of all types donated
-            var emailDonations = {};
-            for (var i = 0; i < topDonors.length; i++) {
-                if (emailDonations[topDonors[i].EMAIL] == undefined) {
-                    emailDonations[topDonors[i].EMAIL] = 0;
-                }
-                
-                var numDonations = parseIntOrZero(topDonors[i].SHIRTS) + parseIntOrZero(topDonors[i].SWEATSHIRTS) + parseIntOrZero(topDonors[i].PANTS) + parseIntOrZero(topDonors[i].OTHER);
-                totalDonations += numDonations;
-                emailDonations[topDonors[i].EMAIL] += numDonations;
-            }
-
-            // TODO: When we switch to clearing the DB every month, we need to read this from another place
-            //       It may be better to just do this manually, once a month.
-            totalDonationsLabel.innerHTML = totalDonations;
-
-            // sort the emails by the amount of donations
-            var sortedEmails = Object.keys(emailDonations).sort(function(a, b) {
-                return emailDonations[b] - emailDonations[a];
-            });
-
-            // Load the data into a table
-            var table = document.getElementById('donor_table');
-            while (table.rows.length > 1) {
-                table.deleteRow(1);
-            }
-            var size = sortedEmails.length < numTopDonors ? sortedEmails.length : numTopDonors;
-            for (var i = 0; i < size; i++) {
-                var row = table.insertRow(i + 1);
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                cell1.innerHTML = " " + (i + 1) + ". " + sortedEmails[i].split('@')[0];
-                cell2.innerHTML = emailDonations[sortedEmails[i]];
-            }
-
-            if (sortedEmails.length < 5) {
-                var row = table.insertRow(sortedEmails.length + 1);
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                cell1.innerHTML = "This could be you!";
-                cell2.innerHTML = "...";
-            }
-        });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    readTopDonors();
-
-    // get the url query (?hall=...) and alert the hall
-    var url = new URL(window.location.href);
-    var hall = url.searchParams.get('hall');
-    if (hall == null) {
-        hall = "stewart"; // workaround for existing bins without the ?hall attribute
-    }
-
-    var college = "warren";
-
-    var form_text = document.getElementById('halltext');
-    switch (hall) {
-        case "stewart":
-            form_text.innerHTML = "Stewart Hall";
-            college = "warren";
-            break;
-        case "frankfurter":
-            form_text.innerHTML = "Frankfurter Hall";
-            college = "warren";
-            break;
-        case "harlan":
-            form_text.innerHTML = "Harlan Hall";
-            college = "warren";
-            break;
-        case "goldberg":
-            form_text.innerHTML = "Goldberg Hall";
-            college = "warren";
-            break;
-        case "douglas":
-            form_text.innerHTML = "Douglas Hall";
-            college = "warren";
-            break;
-        case "brown":
-            form_text.innerHTML = "Brown Hall";
-            college = "warren";
-            break;
-        case "brennan":
-            form_text.innerHTML = "Brennan Hall";
-            college = "warren";
-            break;
-        case "black":
-            form_text.innerHTML = "Black Hall";
-            college = "warren";
-            break;
-        case "bates":
-            form_text.innerHTML = "Bates Hall";
-            college = "warren";
-            break;
-        case "brown":
-            form_text.innerHTML = "Brown Hall";
-            college = "warren";
-            break;
-        case "campuscenter1":
-            form_text.innerHTML = "Campus Center";
-            college = "revelle";
-            break;
-        case "librarywalk":
-            form_text.innerHTML = "Library Walk";
-            college = "librarywalk";
-            break;
-        default:
-            form_text.innerHTML = "Laundry Loads of Love";
-            college = "invalid";
-            hall = "invalid";
-            which_database = "invalid-bad-hall";
-            alert("Invalid hall! Try scanning the QR code again.");
-            break;
-    }
-
-    var form_logo = document.getElementById('collegelogo');
-
-    if (college == "invalid") {
-        form_logo.src = "images/ucsd.svg";
-    } else {
-        form_logo.src = "images/" + college + ".png";
-    }
-
-    form_text.innerHTML = form_text.innerHTML + " Smart Bin Form";
-
-    if (which_database == "invalid-bad-hall") {
-        var form = document.getElementById('smartBinForm');
-        var email = document.getElementById('email');
-        var pid = document.getElementById('pid');
-        var full = document.getElementsByName('full');
-        var tc = document.getElementById('tc');
-        var updates = document.getElementById('updates');
-
-        var numShirts = document.getElementById('shirt');
-        var numSweatshirts = document.getElementById('sweatshirt');
-        var numPants = document.getElementById('pants');
-        var numOther = document.getElementById('other');
-
-        // disable the form (disabled="disabled")
-        form.setAttribute("disabled", "disabled");
-        email.setAttribute("disabled", "disabled");
-        pid.setAttribute("disabled", "disabled");
-        full[0].setAttribute("disabled", "disabled");
-        full[1].setAttribute("disabled", "disabled");
-        tc.setAttribute("disabled", "disabled");
-        updates.setAttribute("disabled", "disabled");
-        numShirts.setAttribute("disabled", "disabled");
-        numSweatshirts.setAttribute("disabled", "disabled");
-        numPants.setAttribute("disabled", "disabled");
-        numOther.setAttribute("disabled", "disabled");
-
-        return;
-    }
-
-    which_database = hall;
-});

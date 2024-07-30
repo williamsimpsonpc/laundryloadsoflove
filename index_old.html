@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Laundry Loads of Love</title>
+
+    <!-- Local stylesheets -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Katibeh&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+</html>
+
+<body>
+    <div class="navbar unselectable">
+        <div class="left-content">
+            <img src="/images/logo.png" alt="logo" class="logo">
+            <div class="font titles">
+                <h1 class="title">Laundry Loads Of Love</h1>
+                <h3 class="subtitle">@ UC San Diego</h3>
+            </div>
+        </div>
+
+        <div class="options">
+            <!-- Options content here -->
+            <a class="font option" href="">Home</a>
+            <a class="font option" href="#work">Our Work</a>
+            <a class="font option" href="#team">Our Team</a>
+        </div>
+    </div>
+
+    <!-- two-column area -->
+    <div class="two-column">
+        <div class="left-column non-form">
+            <h1 class="font large">Our Mission</h1>
+            <h4 class="font medium achievements">
+                Our mission is to raise awareness for clothing reusability by establishing multiple
+                donation centers
+                across campus and stramlining the donation process for students.
+            </h4>
+
+            <h1 class="font large">What We've Done</h1>
+            <ul class="achievements">
+                <li class="two-column leftfloat achievement">
+                    <div class="iconbox">
+                        <img src="/images/f1.png" alt="Dollar Symbol" class="icon">
+                    </div>
+                    <div class="subtext">
+                        <p class="font subtext-top">Clothes Collected</p>
+                        <p class="font subtext-bottom" id="totalDonations">Loading...</p>
+                    </div>
+                </li>
+                <li class="two-column leftfloat achievement">
+                    <div class="iconbox">
+                        <img src="/images/f3.png" alt="laundry" class="icon">
+                    </div>
+                    <div class="subtext leftfloat">
+                        <p class="font subtext-top">Raised From Donors</p>
+                        <p class="font subtext-bottom">$2000</p>
+                    </div>
+                </li>
+                <li class="two-column leftfloat achievement">
+                    <div class="iconbox">
+                        <img src="/images/f4.png" alt="laundry" class="icon">
+                    </div>
+                    <div class="subtext">
+                        <p class="font subtext-top">Student Team Members</p>
+                        <p class="font subtext-bottom">10</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="left-column form-only">
+            <div class="college-banner">
+                <img src="/images/stewart.png" alt="Hall Logo" class="halllogo" id="collegelogo">
+            </div>
+
+            <form id="smartBinForm" onsubmit="validateForm(event)">
+                <h1 class="font unselectable" id="halltext">Stewart Hall Smart Bin Form</h1>
+
+                <!-- Email -->
+                <label for="email" class="unselectable">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+
+                <!-- PID -->
+                <label for="pid" class="unselectable">PID:</label><br>
+                <input type="text" id="pid" name="pid"><br>
+
+                <!-- Whether bin is full -->
+                <label for="bin_full" class="centered-label unselectable">Is the bin
+                    full?</label><br>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <label for="yes" class="unselectable">Yes</label>
+                        <input type="radio" id="yes" name="full" value="yes">
+                    </div>
+                    <div class="radio-option">
+                        <label for="no" class="unselectable">No</label>
+                        <input type="radio" id="no" name="full" value="no">
+                    </div>
+                </div>
+
+
+                <label for="numShirts" class="centered-label unselectable">Number of
+                    Shirts:</label><br>
+                <input type="number" id="shirt" name="shirt" min="0" placeholder="0"><br>
+                <label for="numSweatshirts" class="centered-label unselectable">Number of
+                    Sweatshirts:</label><br>
+                <input type="number" id="sweatshirt" name="sweatshirt" min="0" placeholder="0"><br>
+                <label for="numPants" class="centered-label unselectable">Number of
+                    Pants:</label><br>
+                <input type="number" id="pants" name="pants" min="0" placeholder="0"><br>
+                <label for="numOther" class="centered-label unselectable">Number of
+                    Other Donated Items:</label><br>
+                <input type="number" id="other" name="other" min="0" placeholder="0"><br>
+
+                <!-- T&C -->
+                <div class="last_checkboxes unselectable">
+                    <label for="tc" class="unselectable">I agree to the <a href="terms.html">Terms and
+                            Conditions</a>.</label><br>
+                    <input type="checkbox" id="tc" name="tc">
+                </div>
+
+                <!-- Updates -->
+                <div class="last_checkboxes unselectable">
+                    <label for="updates" class="unselectable">I agree to receive email updates and
+                        information.</label><br>
+                    <input type="checkbox" id="updates" name="updates">
+                </div>
+
+                <!-- Submit button -->
+                <input type="submit" value="Submit"">
+            </form>
+
+            <h2 id="formResponse"></h2>
+        </div>
+
+        <div class="right-column">
+            <div class="leaderboard">
+                <div class="font header">
+                    <h1>Top 10 Donors</h1>
+                </div>
+                
+                <div class="donors" id="topDonors">
+                    <div class="donor">
+                        <p class="font donor-name">Loading...</p>
+                        <p class="font donor-number">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cardwrapper">
+        <div class="aboutcards">
+            <div class="aboutcard">
+                <img src="images/williamsimpson.png" alt="Photo of William">
+                <h3>William Simpson</h3>
+                <p class="cardTitle"><b>Co-Lead</b></p>
+                <p class="cardDescription">Hey, I'm William and I'm the Co-Lead of Laundry Loads of Love. I hope to make UC San Diego more sustainable one step at a time. In my free time I like to box and watch Formula 1.</p>
+                <ul class="follow-us">
+                    <li><a class="instagram" href="https://www.instagram.com/username/"><i aria-hidden="true"></i></a></li>
+                    <li><a class="linkedin" href="https://www.linkedin.com/in/user-name-123456789/"><i aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/form.js"></script>
+</body>

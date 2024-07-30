@@ -1,0 +1,426 @@
+body {
+    background-color: #ffbffe;
+    margin: 0;
+    color: #2F4858;
+    font-family: 'Katibeh', serif;
+    font-size: 30px;
+}
+
+html, body {
+    height: auto;
+}
+
+.navbar {
+    width: 100%;
+    height: 75px;
+    background-color: #ffebf0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 55px;
+}
+
+.title {
+    margin-left: 20px;
+    margin-top: 0px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.subtitle {
+    margin-left: -164px;
+    margin-top: -38px;
+    font-size: 22px;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13px;
+}
+
+.font {
+    font-family: 'Katibeh', serif;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10px;
+}
+
+.options {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.option {
+    margin: 0 20px;
+    font-size: 40px;
+    margin-top: -13px;
+    text-decoration: none;
+    color: #2F4858;
+    transition: color 0.1s;
+}
+
+.option:hover {
+    color: #ff7b89;
+}
+
+.unselectable {
+    user-select: none;
+    cursor: default;
+}
+
+.two-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.left-column {
+    width: calc(50% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c0d1fa;
+    padding: 30px;
+}
+
+.right-column {
+    width: calc(50% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.iconbox {
+    padding: 20px;
+    background-color: #ffbffe;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 55px;
+}
+
+.icon {
+    height: 55px;
+}
+
+.achievement li {
+    list-style-type: none;
+}
+
+.subtext {
+    font-size: 50px;
+}
+
+.subtext-bottom {
+    margin-top: -70px;
+    margin-left: 30px;
+}
+
+.subtext-top {
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.leftfloat {
+    float: left;
+}
+
+.achievements {
+    margin-top: -30px;
+}
+
+.large {
+    font-size: 50px;
+}
+
+.medium {
+    font-size: 30px;
+}
+
+.achievement {
+    margin-top: -35px;
+}
+
+.header {
+    font-size: 30px;
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: -35px;
+}
+
+.leaderboard {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    width: 70%;
+}
+
+.donor {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 60px;
+}
+
+.donor-name {
+    font-size: 50px;
+    color: white;
+    margin-top: -8px;
+    margin-right: 20px;
+}
+
+.donor-number {
+    font-size: 50px;
+    color: white;
+    margin-top: -8px;
+}
+
+.donors .donor:nth-child(1) {
+    background-color: #fddfa3; /* Soft pastel gold */
+}
+
+.donors .donor:nth-child(2) {
+    background-color: #c4cace; /* Soft pastel silver */
+}
+
+.donors .donor:nth-child(3) {
+    background-color: #cd7f32; /* Soft pastel bronze */
+}
+
+.donors .donor:nth-child(1) .donor-name,
+.donors .donor:nth-child(1) .donor-number {
+    color: #02205c;
+}
+
+.donors .donor:nth-child(2) .donor-name,
+.donors .donor:nth-child(2) .donor-number {
+    color: #02205c;
+}
+
+.donors .donor:nth-child(3) .donor-name,
+.donors .donor:nth-child(3) .donor-number {
+    color: #02205c;
+}
+
+.donors {
+    counter-reset: donor-counter; /* Initialize the counter */
+}
+
+.donor::before {
+    counter-increment: donor-counter; /* Increment the counter */
+    content: counter(donor-counter) ". "; /* Display the counter */
+    font-size: 50px;
+    color: white;
+    margin-top: -8px;
+    font-family: 'Katibeh', serif;
+}
+
+.donors .donor:nth-child(1)::before {
+    color: #02205c;
+}
+
+.donors .donor:nth-child(2)::before {
+    color: #02205c;
+}
+
+.donors .donor:nth-child(3)::before {
+    color: #02205c;
+}
+
+.college-banner {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.halllogo {
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    margin: auto;
+}
+
+#smartBinForm input,
+#smartBinForm select,
+#smartBinForm h1 {
+    margin-bottom: 20px;
+}
+
+#smartBinForm input {
+    padding: 0.7vw;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+#smartBinForm select {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+#smartBinForm h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#smartBinForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin-right: 100px; /* Add this line */
+}
+
+.radio-option:last-child {
+  margin-right: 0; /* Add this line */
+}
+
+.radio-option label {
+  margin-right: 5px;
+  margin-top: -15px;
+}
+
+.last_checkboxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%
+}
+
+.last_checkboxes input {
+  margin-left: 10px;
+  margin-top: 13px;
+}
+
+.required {
+  color: red;
+}
+
+#formResponse {
+  color: green;
+  font-size: 2.2vw;
+  text-align: center;
+  margin: 20px;
+}
+
+.cardwrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutcards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 1170px;
+    width: 100%;
+}
+
+.aboutcard {
+    max-width: 25%;
+    font-family: "Poppins", sans-serif;
+    flex: 0 0 23%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: radial-gradient(circle, rgb(192, 209, 250) 27%, rgba(255, 191, 254, 0) 100%);
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+.aboutcard h3 {
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+
+.aboutcard img {
+    width: 148px;
+    height: 148px;
+    margin-bottom: 15px;
+}
+
+.cardTitle {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(42, 42, 42);
+    margin-top: -15px;
+}
+
+.cardDescription {
+    font-size: 13px;
+    color: rgb(42, 42, 42);
+    margin-top: 0px;
+    text-align: center;
+}
+
+.follow-us {
+    display: flex;
+}
+
+.follow-us li {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.instagram {
+    background-image: url('../images/instagram.png');
+    display: block;
+    width: 37px;
+    height: 39px;
+    color: grey;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .aboutcards {
+        justify-content: center;
+    }
+    .aboutcard {
+        max-width: 90%;
+    }
+}
