@@ -311,7 +311,7 @@ a:focus {
   z-index: 99999;
   padding: 0;
   height: 130px;
-  width: 100vw;
+  width: 100%;
   left: 0px;
 }
 
@@ -811,17 +811,22 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .info_section .info_top .info_logo img {
   width: 75px;
-  Height: 57px;
+  height: 57px;
+  padding-right: 15px;
 }
 
 .info_section .info_top .info_logo span {
   color: black;
   font-weight: bold;
   font-size: 32px;
+  line-height: 25px;
 }
 
 .info_section .info_top .social_box {
@@ -961,8 +966,8 @@ a:focus {
 
 /* end footer section*/
 #navbarSupportedContent {
-  -webkit-transform: translateX(100vw);
-  transform: translateX(100vw);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
   opacity: 0;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
@@ -1069,7 +1074,7 @@ a:focus {
 }
 
 #smartBinForm input {
-    padding: 0.7vw;
+    padding: 0.7%;
     border-radius: 5px;
     border: 1px solid #000;
 }
@@ -1155,7 +1160,7 @@ a:focus {
 
 #formResponse {
   color: green;
-  font-size: 2.2vw;
+  font-size: 2.2%;
   text-align: center;
   margin: 20px;
 }
@@ -1248,18 +1253,18 @@ a:focus {
   float: left;
   margin-left: 20px;
   margin-top: 10px;
-  height: 55px;
+  height: 45px;
 }
 
 .title {
   margin-left: 20px;
   margin-top: -10px;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
 }
 
 .subtitle {
-  margin-left: -164px;
+  margin-left: -100px;
   margin-top: -20px;
   font-size: 22px;
 }
@@ -1337,15 +1342,43 @@ a:focus {
   .right-column {
     width: 100%;
   }
+
+  .iconbox {
+    margin-bottom: -148px;
+  }
+
+  .subtext {
+    margin-left: 69px;
+  }
+
+  .subtext-top {
+    margin-top: 68px !important;
+  }
+
+  .subtext-bottom {
+    margin-top: -30px !important;
+  }
 }
 
 @media (max-width: 698px) {
   .navbar {
-    height: 150px;
+    height: 105px;
   }
 
   .leaderboard {
     width: 90%;
+  }
+
+  .navbar .left-content {
+    margin-top: -10px;
+  }
+
+  .option {
+    margin-top: -30px;
+  }
+
+  .subtitle {
+    margin-top: -18px;
   }
 }
 
@@ -1385,7 +1418,7 @@ a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 55px;
+  margin-top: 63px;
 }
 
 .icon {
@@ -1408,13 +1441,14 @@ a:focus {
 }
 
 .subtext-bottom {
-  margin-top: -46px;
+  margin-top: -35px;
   margin-left: 30px;
 }
 
 .subtext-top {
   margin-top: 40px;
   margin-left: 30px;
+  line-height: 40px;
 }
 
 .leftfloat {
@@ -1542,7 +1576,7 @@ a:focus {
 }
 
 #smartBinForm input {
-  padding: 0.7vw;
+  padding: 0.7%;
   border-radius: 5px;
   border: 1px solid #000;
 }
@@ -1606,13 +1640,13 @@ color: red;
 
 #formResponse {
 color: green;
-font-size: 2.2vw;
+font-size: 2.2%;
 text-align: center;
 margin: 20px;
 }
 
 .info-logo br {
-  line-height: 28px;
+  line-height: 18px;
 }
 
 #achievementbox {
